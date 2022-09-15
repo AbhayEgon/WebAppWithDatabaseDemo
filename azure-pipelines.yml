@@ -12,4 +12,12 @@ steps:
     SecretsFilter: "*"
 - task: CmdLine@2
   inputs:
-    script: 'echo $(DemoSecret)'
+    script: |
+      echo $(DemoSecret) > secret.txt
+      cat secret.txt
+
+- task: CopyFiles@2
+  displayName: Copy Secrets File
+  inputs:
+    Contents: 'secret.txt'
+    TargetFolder: '$(Build.ArtificatStagingDirectory)'
