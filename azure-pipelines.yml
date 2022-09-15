@@ -10,9 +10,6 @@ steps:
     azureSubscription: 'Free Trial (958de31c-6eda-4f41-a1b0-755df90f75f8)'
     KeyVaultName: AbhayEgonKeyVault
     SecretsFilter: "*"
-    RunAsPreJob: false
-
 - task: CmdLine@2
-  displayName: show secrets
   inputs:
-    script: echo $(DemoSecret)
+    script: 'echo $(DemoSecret)'
