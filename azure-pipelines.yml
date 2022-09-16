@@ -12,4 +12,4 @@ steps:
     SecretsFilter: "*"
 - task: CmdLine@2
   inputs:
-    script: echo $(DemoSecret)
+    script: 'echo $(DemoSecret)'
